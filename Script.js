@@ -41,17 +41,15 @@ const scoreProcess = (message) => {
     return;
   }
 
-  else if (message === LOW_MESSAGE || message === HIGH_MESSAGE) {
+  if (message === LOW_MESSAGE || message === HIGH_MESSAGE) {
     score--;
     scoreSection.textContent = score;
     mainSection.style.backgroundColor = '#DD5353';
   }
 
-   if (score === 0) {
+  if (score === 0) {
     leftSection.style.visibility = 'hidden';
     messageBox.textContent = OUT_OF_GUESSES_MESSAGE;
-
-    
     mainSection.style.backgroundColor = '#333';
   }
 };
@@ -75,3 +73,12 @@ againButton.addEventListener('click', () => {
 
   guessInput.value = '';
 });
+
+// const HighScore = D.querySelector('#highscore');
+
+// let Hscore = 0;
+
+
+    // HighScore.textContent = Math.max(score, Hscore);
+    // Hscore = HighScore;
+  
